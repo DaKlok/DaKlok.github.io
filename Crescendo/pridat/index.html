@@ -1,0 +1,73 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crescendo · pozvánka od priateľa</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../logo.png">
+<style>
+.code{font:700 2.4rem/1.2 ui-monospace,"SF Mono",Menlo,Consolas,monospace;letter-spacing:.12em;margin:.2em 0 .1em}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);text-decoration:none;font-weight:700;border-radius:999px;padding:14px 26px;margin:10px 10px 0 0;border:0;font-size:1rem;cursor:pointer}
+.btn.alt{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:12px 24px}
+.btn:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+ol{padding-left:1.3em}.muted{color:var(--muted)}.hide{display:none}
+</style></head><body><main>
+<header><img src="../logo.png" alt="Logo Crescenda"><div><h1>Crescendo</h1><p class="sub" data-sk="Čítačka nôt pre tablety s Androidom" data-en="Sheet music reader for Android tablets">Čítačka nôt pre tablety s Androidom</p></div></header>
+
+<div id="ok">
+<h2 data-sk="Priateľ ťa pozýva cvičiť spolu" data-en="A friend invites you to practice together">Priateľ ťa pozýva cvičiť spolu</h2>
+<div class="card">
+<p class="muted" data-sk="Kód priateľa" data-en="Friend code">Kód priateľa</p>
+<p class="code" id="code">····&nbsp;····</p>
+<a class="btn" id="open" href="#" data-sk="Otvoriť v Crescende" data-en="Open in Crescendo">Otvoriť v Crescende</a>
+<button class="btn alt" id="copy" type="button" data-sk="Kopírovať kód" data-en="Copy code">Kopírovať kód</button>
+<p class="muted hide" id="copied" data-sk="Kód je skopírovaný." data-en="Code copied.">Kód je skopírovaný.</p>
+</div>
+<p data-sk="Ešte nemáš Crescendo? Nainštaluj si ho a potom:" data-en="No Crescendo yet? Install it, then:">Ešte nemáš Crescendo? Nainštaluj si ho a potom:</p>
+<ol>
+<li data-sk="Prihlás sa v Nastaveniach, časť Účet a záloha." data-en="Sign in under Settings, Account and backup.">Prihlás sa v Nastaveniach, časť Účet a záloha.</li>
+<li data-sk="Otvor Priateľov a ťukni na Pridať priateľa." data-en="Open Friends and tap Add a friend.">Otvor Priateľov a ťukni na Pridať priateľa.</li>
+<li data-sk="Zadaj kód vyššie alebo znova otvor tento odkaz." data-en="Enter the code above or open this link again.">Zadaj kód vyššie alebo znova otvor tento odkaz.</li>
+</ol>
+</div>
+
+<div id="bad" class="hide card">
+<p data-sk="Tento odkaz nie je celý. Popros priateľa, aby ti poslal pozvánku znova, alebo si od neho vypýtaj kód priateľa." data-en="This link is incomplete. Ask your friend to send the invitation again, or ask for their friend code.">Tento odkaz nie je celý. Popros priateľa, aby ti poslal pozvánku znova, alebo si od neho vypýtaj kód priateľa.</p>
+</div>
+
+<footer><nav><a href="../index.html" data-sk="Domov" data-en="Home">Domov</a><a href="../privacy.html" data-sk="Ochrana súkromia" data-en="Privacy Policy">Ochrana súkromia</a></nav></footer>
+</main>
+<script>
+(function () {
+  var en = !/^sk|^cs/i.test(navigator.language || "");
+  if (en) {
+    document.documentElement.lang = "en";
+    document.title = "Crescendo · invitation from a friend";
+    document.querySelectorAll("[data-en]").forEach(function (e) { e.textContent = e.getAttribute("data-en"); });
+  }
+  var ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  var raw = (new URLSearchParams(location.search).get("k") || "").toUpperCase();
+  var code = raw.split("").filter(function (c) { return ALPHABET.indexOf(c) >= 0; }).join("");
+  if (code.length !== 8) {
+    document.getElementById("ok").classList.add("hide");
+    document.getElementById("bad").classList.remove("hide");
+    return;
+  }
+  document.getElementById("code").textContent = code.slice(0, 4) + " " + code.slice(4);
+  var store = "https://play.google.com/store/apps/details?id=com.daklok.crescendo";
+  var android = /android/i.test(navigator.userAgent);
+  // Android: otvorí aplikáciu, a keď ešte nie je nainštalovaná, Google Play
+  document.getElementById("open").href = android
+    ? "intent://friend/" + code + "#Intent;scheme=crescendo;package=com.daklok.crescendo;S.browser_fallback_url=" + encodeURIComponent(store) + ";end"
+    : store;
+  document.getElementById("copy").addEventListener("click", function () {
+    var done = function () { document.getElementById("copied").classList.remove("hide"); };
+    // bez schránky aspoň označiť kód, nech sa dá skopírovať ručne
+    var select = function () {
+      var r = document.createRange();
+      r.selectNodeContents(document.getElementById("code"));
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+    };
+    if (navigator.clipboard) navigator.clipboard.writeText(code).then(done, select); else select();
+  });
+})();
+</script>
+</body></html>
