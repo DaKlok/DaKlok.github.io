@@ -1,66 +1,141 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crescendo · Privacy Policy</title><link rel="stylesheet" href="style.css"><link rel="icon" href="logo.png"></head><body><main>
-<header><img src="logo.png" alt=""><div><h1>Privacy Policy</h1><p class="sub">Crescendo · effective October 27, 2026 (updated with safety features)</p></div></header>
-<p>Crescendo (“the app”) is developed by DaKlok (“we”). This policy explains what data the app handles. In short: the app has <b>no ads, analytics or tracking</b>, and we never sell data. Without an account, everything stays on your device or in your own Google Drive. If you create an optional Crescendo account, the data needed for sync and friends is stored in Google Firebase, as described below.</p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crescendo · Privacy Policy</title>
+<meta name="description" content="What data Crescendo handles, why, where it is stored and how to delete it.">
+<meta name="theme-color" content="#F4F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#13120F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="logo.png">
+<link rel="preload" href="fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M5.5 3.2v17.6c0 .7.8 1.2 1.4.8l14-8.8a.95.95 0 0 0 0-1.6l-14-8.8c-.6-.4-1.4.1-1.4.8z" fill="currentColor" stroke="none"/></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div></div>
 
-<h2>Data stored on your device</h2>
-<p>The app stores the PDF files you import, their thumbnails, your annotations, folders and app settings in the app’s private storage on your device. This data is not sent to us or any third party.</p>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="./"><span class="logo"><img src="img/icon-fg.png" alt=""></span>Crescendo</a>
+    <nav class="links" aria-label="Main">
+      <a href="./">Home</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="delete-account.html">Delete account</a>
+    </nav>
+    <button class="lang" type="button">SK</button>
+    <a class="btn small" href="https://play.google.com/store/apps/details?id=com.daklok.crescendo"><svg class="i"><use href="#i-play"/></svg>Get the app</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
 
-<h2>Camera</h2>
-<p>If you turn on hands-free page turning, the app uses the camera to detect head movements and facial gestures. The image is analysed in real time on your device using Google ML Kit (on-device face detection). Camera images are never saved, recorded or transmitted.</p>
+<main id="main">
+  <div class="wrap doc-head intro">
+    <span class="chip soft">Crescendo</span>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective November 17, 2026</p>
+    <div class="summary">
+      <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>No ads, analytics or tracking</div>
+      <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>We never sell your data</div>
+      <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>Camera and safety checks stay on your device</div>
+      <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>Encrypted in transit</div>
+      <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>Delete everything anytime</div>
+    </div>
+  </div>
 
-<h2>Microphone</h2>
-<p>The microphone is used only when you use the tuner or record yourself practising. The tuner analyses sound in real time on your device and stores nothing. Recordings are saved only in the app on your device (and in your own backup, if you make one).</p>
+  <div class="wrap doc">
+    <aside class="toc reveal"><p>Contents</p></aside>
+    <article class="article reveal">
+      <div class="callout"><svg class="i"><use href="#i-info"/></svg><p>Crescendo (“the app”) is developed by DaKlok (“we”). This policy explains in plain words what data the app handles, why, where it is stored and how you can delete it. In short: the app has <b>no ads, analytics or tracking</b>, and we never sell data. Your Crescendo account and the data needed for sync, friends and the cloud are stored in Google Firebase, as described below.</p></div>
 
-<h2>Free sheet music catalog</h2>
-<p>When you open the catalog, the app downloads a list of pieces from the app’s website (daklok.github.io). When you add a piece, the PDF is downloaded directly from the Mutopia Project (mutopiaproject.org). No personal data is sent, only standard web requests.</p>
+      <h2 id="account">Your Crescendo account</h2>
+      <p>To use Crescendo you sign in with a Crescendo account, created with Google or with an email address and password (Google Firebase Authentication). Your library, annotations and practice log belong to your account, so they are never lost or mixed up between people and you have them on all your devices. The account stores your <b>email address, name and profile photo link</b> and a random account ID.</p>
 
-<h2>Google account and Google Drive</h2>
-<p>Backup to Google Drive is optional. If you connect your Google account, the app requests:</p>
-<ul>
-<li><b>Your email address</b>: only to show which account is connected.</li>
-<li><b>Access to the app’s own hidden folder on your Google Drive</b> (scope <code>drive.appdata</code>: to upload, list, download and delete Crescendo backups. The app cannot see or access any other files on your Drive.</li>
-</ul>
-<p>If you are signed in to a Crescendo account and connect Google Drive, the app also keeps your sheet music PDFs and recordings in the same hidden folder, so that your other devices can download them. A random device identifier and the device model name are stored with them so that the app can tell which device made the latest changes.</p>
-<p>Backups contain your imported PDFs, annotations, folders and settings and, with a Crescendo account, a copy of your chats with friends. They are transferred directly between your device and Google Drive over an encrypted connection and are never sent to our servers (we do not operate any). You can disconnect your account in the app’s settings at any time and delete the backup data in Google Drive under <i>Settings → Manage apps</i>.</p>
-<p>Crescendo’s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google user data is not used for advertising, sold, shared with third parties or used to train AI models.</p>
+      <h2 id="device">Data stored on your device</h2>
+      <p>The app stores the PDF files you import or scan, their thumbnails, your annotations, folders, recordings and app settings in the app’s private storage on your device. Scanning a document uses Google’s document scanner (ML Kit in Google Play services); the scanned pages are returned to the app and stay on your device. Text recognition used to find titles and measures in your music also runs on your device.</p>
 
-<h2>Crescendo account (optional)</h2>
-<p>You can create an account with Google or with an email address and password (Google Firebase Authentication). The account stores your email address, name and profile photo link. It is used to keep your library the same on all your devices and to practise with friends. The data below is stored in Google Cloud Firestore and is transferred over an encrypted connection:</p>
-<ul>
-<li><b>Sync</b>: your list of pieces (titles, composers and similar details), folders, setlists, annotations, bookmarks, practice log, practice spots and some settings. Only you can read this data. Sheet music PDFs and recordings are not stored here (see Google Drive above).</li>
-<li><b>Friends</b>: your profile (name, photo, friend code) and practice statistics (streak, minutes today, this week and in total, the last 7 days and, if you allow it, the title of the piece you practised last) are visible to the friends you accept.</li>
-<li><b>Sending music</b>: music you send to a friend (the PDF and the parts you choose, such as annotations or recordings) is stored for 30 days after sending, so your friends can accept it and download it again if they remove it from their library. Music sent through a shared setlist is deleted as soon as everyone has it.</li>
-<li><b>Shared music</b>: annotations of a piece you share are visible to and editable by its members. While the music is open, the other members see which page you are on and where you last wrote. If you allow it, they also see how much you practised that piece and which practice spots you have finished.</li>
-<li><b>Shared setlists</b>: the title, the list of pieces and the names of the members.</li>
-<li><b>Chat</b>: messages you write to a friend or in a group, and what the chat shows besides them (music sent there, edits in shared music, changes in the group), are visible to the members of that chat. A group also stores its name, its members and who manages it. The chat remembers how far each member has read, so a friend can see that you have seen a message. You can delete your own messages; devices of the other members that already received a deleted message keep its text hidden, only so that it can still be reported. A chat with a friend is deleted when the friendship is removed, a group when its manager deletes it or its last member leaves. The app also keeps a copy of your chats on your device, so you can read them offline and keep them when a chat ends; this copy is part of your backup (see Google Drive above) and you can delete it in the app. A clap for a friend's practice is a message in your chat with them; claps from older versions of the app are kept in the friend's account for at most 30 days.</li>
-<li><b>Safety</b>: the list of people you blocked (their account IDs, names and photo links) is stored in your account and only you can see it; it is used to stop their friend requests and hide their content. If you report something, the report contains what you reported (the message, music, group or person), the names and account IDs of the people involved, the messages of that chat around it (at most 100), your optional note, your account ID and name and the app version. Only we can read reports; we use them only to handle the report and keep them for at most one year, or longer only if the law requires it (for example when we must pass them to the police). The person you report is not told who reported them.</li>
-</ul>
-<p>The app checks pages of sheet music you send and receive for nudity with a small model built into the app (based on the open source nsfwjs project), and it can hide offensive words in chat. Both checks run only on your device; no pages or messages are sent anywhere for them.</p>
-<p>You can sign out at any time. <b>Delete account</b> in the app’s settings deletes your account and its data in Firestore (profile, friendships, chats with friends, your messages in groups, your list of blocked people, sync data and music you sent that was not accepted yet) and removes you from groups, shared music and setlists. Annotations you wrote in shared music stay with the other members. See the <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> for how Google processes this data.</p>
+      <h2 id="sync">Sync</h2>
+      <p>The following data is stored in Google Cloud Firestore and is transferred over an encrypted connection. Only you can read it:</p>
+      <ul>
+        <li>your list of pieces (titles, composers and similar details), folders, setlists, annotations, bookmarks, practice log, practice spots and some settings;</li>
+        <li>a random device identifier and the device model name, so the app can tell which device made the latest changes.</li>
+      </ul>
 
-<h2>Digital piano (MIDI and Bluetooth)</h2>
-<p>If you connect a digital piano by USB cable or Bluetooth MIDI, the app receives the notes and pedal presses you play to record your playing, show the keys in the visualizer and turn pages with the pedal. This data is processed on your device only. Bluetooth permissions are used only to find and connect to your piano.</p>
+      <h2 id="cloud">Sheet music and recordings in the cloud (Pro)</h2>
+      <p>With Crescendo Pro, the files of your pieces – sheet music PDFs, reference and own recordings, MIDI and learned page turns for turn by sound – and daily <b>restore points</b> of your library are stored in Google Cloud Storage, up to 1&nbsp;GB. Only your account can access these files. A file you delete stays in the cloud for 30 more days, because restore points may still need it. A server function keeps count of how much space your account uses.</p>
+      <p>Without Pro, sheet music and recordings stay only on your device. You can always make a backup to a file; it is stored where you choose and is under your control.</p>
 
-<h2>Notifications and Do Not Disturb</h2>
-<p>If you turn on the practice reminder, the app shows a local notification once a day. It is created on your device; nothing is sent anywhere. With a Crescendo account, the app checks your account about every 15 minutes for new messages, music, friend requests and setlist invitations and shows a notification on your device; you can turn this off in Friends, or mute a single chat. In stage mode the app can turn on Do Not Disturb, only if you allow it.</p>
+      <h2 id="friends">Friends, sharing and chat</h2>
+      <ul>
+        <li><b>Friends</b>: your profile (name, photo, friend code) and practice statistics (streak, minutes today, this week and in total, the last 7 days and, if you allow it, the title of the piece you practised last) are visible to the friends you accept. Friends can only be added with their personal code or QR code; scanning a QR code uses Google’s code scanner and the camera image is not shared with the app.</li>
+        <li><b>Sending music</b>: music you send to a friend (the PDF and the parts you choose, such as annotations or recordings) is stored for 30 days after sending, so your friends can accept it and download it again. Music sent through a shared setlist is deleted as soon as everyone has it. A daily sending limit is counted per account and deleted after a few days.</li>
+        <li><b>Shared music</b>: annotations of a piece you share are visible to and editable by its members. While the music is open, the other members see which page you are on and where you last wrote. If you allow it, they also see how much you practised that piece and which practice spots you have finished.</li>
+        <li><b>Shared setlists</b>: the title, the list of pieces and the names of the members.</li>
+        <li><b>Chat</b>: messages you write to a friend or in a group, and what the chat shows besides them (music sent there, edits in shared music, changes in the group), are visible to the members of that chat. A group also stores its name, its members and who manages it. The chat remembers how far each member has read, so a friend can see that you have seen a message. You can delete your own messages; devices of the other members that already received a deleted message keep its text hidden, only so that it can still be reported. A chat with a friend is deleted when the friendship is removed, a group when its manager deletes it or its last member leaves. The app keeps a copy of your chats on your device, so you can read them offline. A clap for a friend’s practice is a message in your chat with them.</li>
+      </ul>
 
-<h2>Purchases (Crescendo Pro)</h2>
-<p>Crescendo Pro is sold through Google Play. Payments are handled entirely by Google; we never receive your payment details. The app only asks Google Play whether your Google account owns Crescendo Pro or an active subscription, and remembers the answer on your device. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> for how Google processes purchases.</p>
+      <h2 id="safety">Safety</h2>
+      <p>The list of people you blocked (their account IDs, names and photo links) is stored in your account and only you can see it; it is used to stop their friend requests and hide their content. If you report something, the report contains what you reported (the message, music, group or person), the names and account IDs of the people involved, the messages of that chat around it (at most 100), your optional note, your account ID and name and the app version. Only we can read reports; we use them only to handle the report and keep them for at most one year, or longer only if the law requires it (for example when we must pass them to the police). The person you report is not told who reported them.</p>
+      <p>The app checks pages of sheet music you send and receive for nudity with a small model built into the app (based on the open source nsfwjs project), and it can hide offensive words in chat. Both checks run only on your device; no pages or messages are sent anywhere for them.</p>
 
-<h2>Analytics and advertising</h2>
-<p>The app contains no ads, analytics or tracking.</p>
+      <h2 id="camera">Camera</h2>
+      <p>If you turn on hands-free page turning, the app uses the front camera to detect head movements and facial gestures. The image is analysed in real time on your device using Google ML Kit (on-device face detection). Camera images are never saved, recorded or transmitted.</p>
 
-<h2>Data deletion</h2>
-<p>Uninstalling the app removes all data from your device. Your Crescendo account and its data can be deleted with <b>Delete account</b> in the app. Backups stored in your Google Drive can be deleted from the app or from Google Drive. Backup ZIP files you export are stored where you choose and are under your control.</p>
+      <h2 id="microphone">Microphone</h2>
+      <p>The microphone is used only when you use the tuner, turn by sound, or record yourself practising. Sound for the tuner and turn by sound is analysed in real time on your device and is not stored. Recordings are saved in the app on your device and, with Pro, in your cloud storage (see above).</p>
 
-<h2>Children</h2>
-<p>Crescendo can be used by music students of any age. Without an account the app collects no personal information. The account, friends and chat are meant for people who know each other (friends can only be added with their personal code); if you are under 16, use them only with the consent of your parent or guardian. If you believe a child uses an account without that consent, contact us and we will delete it. See also the <a href="terms.html#community">community rules</a> and our <a href="terms.html#child-safety">child safety standards</a>.</p>
+      <h2 id="piano">Digital piano (MIDI and Bluetooth)</h2>
+      <p>If you connect a digital piano by USB cable or Bluetooth MIDI, the app receives the notes and pedal presses you play to record your playing, show the keys in the visualizer, write music and turn pages with the pedal. This data is processed on your device only. Bluetooth permissions are used only to find and connect to your piano.</p>
 
-<h2>Changes</h2>
-<p>If this policy changes, the updated version will be published on this page with a new effective date.</p>
+      <h2 id="catalog">Free sheet music catalog and sounds</h2>
+      <p>When you open the catalog, the app downloads a list of pieces from this website (daklok.github.io). When you add a piece, its files are downloaded directly from the Mutopia Project (mutopiaproject.org). Instrument sounds for playback are downloaded from this website or public mirrors (cdn.jsdelivr.net, raw.githubusercontent.com). These are standard web requests; no personal data is sent with them.</p>
 
-<h2>Contact</h2>
-<p><a href="mailto:support.crescendo.com@gmail.com">support.crescendo.com@gmail.com</a></p>
-<footer><nav><a href="index.html">Home</a><a href="terms.html">Terms of Service</a></nav></footer>
-</main></body></html>
+      <h2 id="notifications">Notifications and Do Not Disturb</h2>
+      <p>If you turn on the practice reminder, the app shows a local notification once a day; it is created on your device. The app checks your account about every 15 minutes for new messages, music, friend requests and setlist invitations and shows a notification on your device; you can turn this off in Friends, or mute a single chat. In stage mode the app can turn on Do Not Disturb, only if you allow it.</p>
+
+      <h2 id="purchases">Purchases (Crescendo Pro)</h2>
+      <p>Crescendo Pro is a subscription sold through Google Play. Payments are handled entirely by Google; we never receive your payment details. To unlock the cloud for your account, the app sends the purchase token to our server function, which checks it with Google Play and stores the product, the purchase token, its state and expiry date with your account ID. Google Play also notifies the server when a subscription is renewed, cancelled or refunded. See the <a href="https://policies.google.com/privacy">Google Privacy Policy</a> for how Google processes purchases.</p>
+
+      <h2 id="security">Security</h2>
+      <p>All data the app sends is encrypted in transit (HTTPS/TLS). Access to your data in Firebase is protected by security rules, so other people can only see what is described above. Firebase App Check with Google Play Integrity makes sure that only the genuine app from Google Play can reach our Firebase services.</p>
+
+      <h2 id="ads">Analytics and advertising</h2>
+      <p>The app contains no ads, analytics or tracking, and data is never sold or used for advertising or to train AI models.</p>
+
+      <h2 id="deletion">Data deletion and retention</h2>
+      <p><b>Delete account</b> in the app (Settings → Account and backup) permanently deletes your account and its data in the cloud: profile, friendships, chats with friends, your messages in groups, your list of blocked people, sync data, sheet music, recordings and restore points in the cloud, and music you sent that was not accepted yet. It also removes you from groups, shared music and setlists. Annotations you wrote in shared music stay with the other members. Reports are kept as described under Safety. Uninstalling the app removes all data from your device.</p>
+      <p>You can also ask us to delete your account without the app – see <a href="delete-account.html">Delete your account</a>.</p>
+
+      <h2 id="rights">Your rights</h2>
+      <p>You can ask us for a copy of your data, to correct it or to delete it, and you can object to its processing. Write to the address below. If you live in the European Union, you can also complain to your data protection authority (in Slovakia, the Office for Personal Data Protection). See the <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a> for how Google processes data on our behalf.</p>
+
+      <h2 id="children">Children</h2>
+      <p>Crescendo is intended for users aged 13 and over. Friends can only be added with their personal code, and chat is meant for people who know each other. If you are under 16, use the account, friends and chat only with the consent of your parent or guardian. If you believe a child uses an account without that consent, contact us and we will delete it. See also the <a href="terms.html#community">community rules</a> and our <a href="terms.html#child-safety">child safety standards</a>.</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>If this policy changes, the updated version will be published on this page with a new effective date.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p><a href="mailto:support.crescendo.com@gmail.com">support.crescendo.com@gmail.com</a></p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span class="year">2026</span> DaKlok · Crescendo</span>
+    <nav><a href="./">Home</a><a href="terms.html">Terms of Service</a><a href="delete-account.html">Delete account</a><a href="mailto:support.crescendo.com@gmail.com">Contact</a></nav>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>
