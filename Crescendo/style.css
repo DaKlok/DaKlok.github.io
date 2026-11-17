@@ -329,6 +329,7 @@ section { padding: 90px 0; position: relative; }
 .plan li svg { width: 22px; height: 22px; flex: none; margin-top: 2px; color: var(--primary); }
 .plan.pro li svg { color: #fff; }
 @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
+.plans-note { margin-top: 18px; padding: 20px 24px; border-radius: 28px; align-items: flex-start; }
 
 /* záverečná výzva */
 .cta-band {
