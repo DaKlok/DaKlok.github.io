@@ -389,6 +389,59 @@ footer a { color: inherit; }
 .two ul { margin: 0; }
 @media (max-width: 700px) { .two { grid-template-columns: 1fr; } }
 
+/* oznam o beta testovaní na domovskej stránke */
+.announce {
+  display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px;
+  padding: 8px 10px 8px 8px; border-radius: 999px; text-decoration: none;
+  background: var(--tertiary-container); color: var(--on-tertiary-container); font-weight: 650; font-size: 15px;
+  transition: transform .4s var(--spring), box-shadow .3s;
+}
+.announce:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(var(--shadow), .14); text-decoration: none; }
+.announce .tag { padding: 5px 12px; border-radius: 999px; background: var(--tertiary); color: var(--on-tertiary); font-size: 12px; font-weight: 900; letter-spacing: .1em; }
+.announce .go { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--card); transition: transform .4s var(--spring); }
+.announce:hover .go { transform: translateX(3px); }
+.announce .go svg { width: 16px; height: 16px; }
+.announce .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--tertiary); box-shadow: 0 0 0 0 var(--tertiary); animation: pulse 2s infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+/* beta testovanie: kroky s tlačidlami */
+.beta-page { max-width: 860px; margin: 0 auto; padding-bottom: 40px; }
+.beta-page .doc-head { text-align: center; }
+.beta-page .doc-head .lead { margin-inline: auto; max-width: 680px; }
+.join { display: grid; gap: 16px; counter-reset: j; }
+.join .step {
+  counter-increment: j; position: relative; display: grid; grid-template-columns: 64px 1fr; gap: 6px 22px; align-items: start;
+  padding: 28px; border-radius: 36px; background: var(--card); border: 1px solid var(--outline);
+  transition: transform .5s var(--spring), border-radius .5s var(--spring), box-shadow .3s;
+}
+.join .step:hover { transform: translateY(-4px); border-radius: 44px; box-shadow: 0 22px 46px rgba(var(--shadow), .12); }
+.join .step::before {
+  content: counter(j); grid-row: span 3; display: grid; place-items: center; width: 64px; height: 64px;
+  border-radius: 22px; background: var(--primary); color: var(--on-primary); font-size: 28px; font-weight: 900;
+  transition: border-radius .6s var(--spring), transform .6s var(--spring);
+}
+.join .step:hover::before { border-radius: 50%; transform: rotate(-10deg); }
+.join .step:nth-child(2)::before { background: var(--tertiary); color: var(--on-tertiary); }
+.join .step > * { grid-column: 2; }
+.join .step h2 { font-size: 26px; margin-top: 4px; }
+.join .step p { margin: 4px 0 10px; color: var(--on-surface-variant); }
+.join .step .btn { justify-self: start; }
+.join .step .url { font-size: 13px; color: var(--on-surface-variant); word-break: break-all; margin: 10px 0 0; }
+@media (max-width: 560px) {
+  .join .step { grid-template-columns: 1fr; padding: 24px; }
+  .join .step > * { grid-column: auto; }
+  .join .step::before { grid-row: auto; width: 52px; height: 52px; font-size: 22px; border-radius: 18px; }
+}
+.faq { margin-top: 40px; display: grid; gap: 12px; }
+.faq details { border-radius: 26px; background: var(--card); border: 1px solid var(--outline); padding: 0 22px; transition: border-radius .4s var(--spring); }
+.faq details[open] { border-radius: 32px; }
+.faq summary { cursor: pointer; list-style: none; padding: 20px 0; font-weight: 750; font-size: 18px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-high); font-size: 22px; font-weight: 500; transition: transform .4s var(--spring); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 20px; color: var(--on-surface-variant); }
+.thanks { margin-top: 30px; }
+
 /* pozvánka */
 .invite { max-width: 640px; margin: 20px auto 60px; text-align: center; }
 .invite .card { padding: clamp(28px, 5vw, 48px); border-radius: 40px; background: var(--card); border: 1px solid var(--outline); margin: 26px 0; box-shadow: 0 24px 60px rgba(var(--shadow), .10); }
