@@ -17,61 +17,23 @@
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 21H20"/><path d="M9 8h6M9 11.5h4"/></symbol>
-  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4.5L16.5 4a2.1 2.1 0 0 1 3 3L8 18.5z"/><path d="M14.5 6l3 3"/></symbol>
-  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2.5v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol>
-  <symbol id="i-piano" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 20v-6M15 20v-6"/><path d="M7.5 4.5v9.5h3V4.5zM13.5 4.5v9.5h3V4.5z" fill="currentColor" stroke="none"/></symbol>
-  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c.8 3.2 5.5 5.3 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.3 1.1-4 2.3-5 .1 2 1.1 3.3 2.4 3.3C11.2 8.6 10.5 6 12 3z"/></symbol>
-  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M2.8 20c.4-3.4 3-5.8 6.2-5.8s5.8 2.4 6.2 5.8"/><circle cx="17.2" cy="8.8" r="2.6"/><path d="M16.6 14.3c2.6.3 4.4 2.5 4.6 5.7"/></symbol>
-  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4.5 4h15A1.5 1.5 0 0 1 21 5.5v10a1.5 1.5 0 0 1-1.5 1.5H9l-5 4V5.5A1.5 1.5 0 0 1 4.5 4z"/><path d="M8 9h8M8 12.5h5"/></symbol>
-  <symbol id="i-face" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01"/><path d="M8.5 14.5c1.9 1.8 5.1 1.8 7 0"/></symbol>
-  <symbol id="i-ear" viewBox="0 0 24 24"><path d="M7 9a5 5 0 0 1 10 0c0 3-2.5 4-3 6.5-.4 2.2-1.6 3.5-3.5 3.5A3 3 0 0 1 7.6 17"/><path d="M10 9.5a2 2 0 0 1 4 0c0 1.2-1 1.6-1.5 2.5"/></symbol>
-  <symbol id="i-list" viewBox="0 0 24 24"><path d="M4 6h11M4 11h11M4 16h7"/><path d="M17 13v6.5"/><circle cx="15" cy="19.5" r="2"/><path d="M17 13l3 1"/></symbol>
-  <symbol id="i-tune" viewBox="0 0 24 24"><path d="M8 21h8l-1.5-17h-5z"/><path d="M12 15l4-8"/><path d="M9 17.5h6"/></symbol>
-  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 19a4.5 4.5 0 0 1-.7-8.95A6 6 0 0 1 17.9 9.4 4.8 4.8 0 0 1 17.5 19z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><path d="M5.5 3.2v17.6c0 .7.8 1.2 1.4.8l14-8.8a.95.95 0 0 0 0-1.6l-14-8.8c-.6-.4-1.4.1-1.4.8z" fill="currentColor" stroke="none"/></symbol>
-  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
-  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></symbol>
-  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
-</svg>
-<a class="skip" href="#main" data-sk="Preskočiť na obsah">Skip to content</a>
-
+<body data-page="home">
 <div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
-
-<header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="./"><span class="logo"><img src="img/icon-fg.png" alt=""></span>Crescendo</a>
-    <nav class="links" aria-label="Main">
-      <a href="#features" data-sk="Funkcie">Features</a>
-      <a href="#screens" data-sk="Ukážky">Screens</a>
-      <a href="#privacy" data-sk="Súkromie">Privacy</a>
-      <a href="#pro">Pro</a>
-      <a href="beta.html">Beta</a>
-    </nav>
-    <button class="lang" type="button">SK</button>
-    <a class="btn small" href="beta.html"><svg class="i"><use href="#i-flask"/></svg><span data-sk="Testovať">Join the beta</span></a>
-    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
-  </div>
-</header>
+<div data-include="header"></div>
 
 <main id="main">
   <section class="hero">
     <div class="wrap">
       <div class="intro">
-        <a class="announce" href="beta.html"><span class="tag">BETA</span><span class="dot" aria-hidden="true"></span><span data-sk="Hľadáme 12 testerov – pridaj sa">We need 12 testers – join in</span><span class="go" aria-hidden="true"><svg class="i"><use href="#i-right"/></svg></span></a><br>
+        <a class="announce when-beta" href="beta.html"><span class="tag">BETA</span><span class="dot" aria-hidden="true"></span><span data-sk="Hľadáme 12 testerov – pridaj sa">We need 12 testers – join in</span><span class="go" aria-hidden="true"><svg class="i"><use href="#i-right"/></svg></span></a><br class="when-beta">
         <span class="chip"><span class="n">♪</span><span data-sk="Pre Android mobily a tablety">For Android phones &amp; tablets</span></span>
         <h1 data-sk="Noty, cvičenie a&nbsp;<em>priatelia</em>.">Sheet music, practice &amp;&nbsp;<em>friends</em>.</h1>
         <p class="lead" data-sk="Crescendo je pokojný a moderný domov pre tvoje noty. Čítaj a píš do partitúr, objavuj takmer 2&nbsp;000 skladieb zadarmo, buduj sériu cvičenia a zdieľaj hudbu s priateľmi.">Crescendo is a calm, modern home for your sheet music. Read and annotate your scores, explore almost 2,000 free pieces, build a practice streak and share music with friends.</p>
         <div class="cta">
-          <a class="btn" href="beta.html"><svg class="i"><use href="#i-flask"/></svg><span data-sk="Pripojiť sa k bete">Join the beta</span></a>
+          <a class="btn" data-cta href="beta.html"><span class="when-beta"><svg class="i"><use href="#i-flask"/></svg></span><span class="when-live"><svg class="i"><use href="#i-play"/></svg></span><span class="when-beta" data-sk="Pripojiť sa k bete">Join the beta</span><span class="when-live" data-sk="Stiahnuť na Google Play">Get it on Google Play</span></a>
           <a class="btn tonal" href="#features" data-sk="Čo všetko vie">See what it does</a>
         </div>
-        <p class="note" data-sk="Zadarmo na začiatok · Bez reklám · Bez sledovania · Teraz v beta testovaní">Free to start · No ads · No tracking · Now in beta testing</p>
+        <p class="note" data-sk="Zadarmo · Bez reklám · Bez sledovania">Free to use · No ads · No tracking</p>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="device tablet"><div class="scr"><img src="img/tablet-reader.webp" alt="" width="900" height="1316"></div></div>
@@ -190,34 +152,19 @@
 
   <section id="pro">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Crescendo Pro</span>
-        <h2 data-sk="Začni zadarmo, rasti s Pro">Start free, grow with Pro</h2>
-      </div>
-      <div class="plans" data-stagger>
-        <div class="plan">
-          <h3 data-sk="Zadarmo">Free</h3>
-          <p class="price" data-sk="Navždy, bez limitu skladieb">Forever, with no limit on pieces</p>
-          <ul>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Čítačka, otáčanie strán aj hlavou">Reader with hands-free page turning</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Katalóg takmer 2 000 nôt zadarmo">Catalog of almost 2,000 free scores</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Pero a guma na poznámky">Pen and eraser annotations</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Denník cvičenia, série, odznaky a widgety">Practice log, streaks, badges and widgets</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Priatelia, chat a posielanie nôt">Friends, chat and sending music</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Synchronizácia knižnice a záloha do súboru">Library sync and backup to a file</span></li>
-          </ul>
+      <div class="teaser reveal">
+        <div>
+          <span class="eyebrow" data-sk="Cenník">Pricing</span>
+          <h2 data-sk="Zadarmo na používanie. Pro, keď chceš viac.">Free to use. Pro when you want more.</h2>
+          <p class="lead" data-sk="Všetko na čítanie a cvičenie je zadarmo a bez limitu skladieb. Pro pridáva vizualizér, otáčanie podľa zvuku, všetky nástroje na poznámky, setlisty, export do PDF a 1 GB cloudu.">Everything for reading and practising is free, with no limit on pieces. Pro adds the visualizer, turn by sound, every annotation tool, setlists, PDF export and 1 GB of cloud.</p>
+          <div class="cta">
+            <a class="btn" href="pricing.html" data-sk="Porovnať verzie">Compare plans</a>
+            <a class="btn tonal" href="help.html#pro" data-sk="Otázky o Pro">Pro questions</a>
+          </div>
         </div>
-        <div class="plan pro">
-          <h3>Pro</h3>
-          <p class="price" data-sk="Mesačné alebo ročné predplatné">Monthly or yearly subscription</p>
-          <ul>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Všetky nástroje na poznámky">Every annotation tool</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Vizualizér klavíra">Piano visualizer</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Otáčanie podľa zvuku (beta)">Turn by sound (beta)</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Setlisty a režim pódia">Setlists and stage mode</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Export do PDF">Export to PDF</span></li>
-            <li><svg class="i"><use href="#i-check"/></svg><span data-sk="1 GB v cloude pre noty, nahrávky a denné body obnovenia">1 GB of cloud for sheet music, recordings and daily restore points</span></li>
-          </ul>
+        <div class="mini-plans">
+          <a class="mini" href="pricing.html"><b data-sk="Zadarmo">Free</b><span class="amt" data-sk="0 €">€0</span><span data-sk="navždy">forever</span></a>
+          <a class="mini pro" href="pricing.html"><b>Pro</b><span class="amt" data-sk="od 1,67 €">from €1.67</span><span data-sk="mesačne pri ročnom pláne">a month, billed yearly</span></a>
         </div>
       </div>
       <div class="callout plans-note reveal"><svg class="i"><use href="#i-sparkle"/></svg><p data-sk="<b>Pro sa priebežne mení.</b> Nové funkcie často pribudnú najprv v Pro a neskôr sa môžu presunúť do verzie zadarmo pre všetkých – napríklad otáčanie strán podľa zvuku. Aktuálny zoznam vždy nájdeš v aplikácii."><b>Pro keeps evolving.</b> New features often arrive in Pro first and may later move to the free version for everyone – for example, turn by sound. The current list is always shown in the app.</p></div>
@@ -230,24 +177,16 @@
         <div class="logo-big"><img src="img/icon-fg.png" alt=""></div>
         <h2 data-sk="Hraj viac. Tráp sa menej.">Play more. Worry less.</h2>
         <p class="lead" data-sk="Vyskúšaj Crescendo ako jeden z prvých a pomôž mu vyjsť pre všetkých.">Try Crescendo among the first and help it launch for everyone.</p>
-        <div class="cta"><a class="btn" href="beta.html"><svg class="i"><use href="#i-flask"/></svg><span data-sk="Pripojiť sa k bete">Join the beta</span></a></div>
+        <div class="cta">
+          <a class="btn" data-cta href="beta.html"><span class="when-beta" data-sk="Pripojiť sa k bete">Join the beta</span><span class="when-live" data-sk="Stiahnuť na Google Play">Get it on Google Play</span></a>
+          <a class="btn outline" href="help.html" data-sk="Nápoveda a otázky">Help &amp; FAQ</a>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© <span class="year">2026</span> Samuel Káčer · Crescendo</span>
-    <nav>
-      <a href="privacy.html" data-sk="Ochrana súkromia">Privacy Policy</a>
-      <a href="terms.html" data-sk="Podmienky">Terms of Service</a>
-      <a href="beta.html" data-sk="Beta testovanie">Beta testing</a>
-      <a href="delete-account.html" data-sk="Zmazanie účtu">Delete account</a>
-      <a href="mailto:support.crescendo.com@gmail.com" data-sk="Kontakt">Contact</a>
-    </nav>
-  </div>
-</footer>
+<div data-include="footer"></div>
 <script src="site.js"></script>
 </body>
 </html>

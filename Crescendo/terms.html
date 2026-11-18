@@ -12,37 +12,21 @@
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4h.01"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><path d="M5.5 3.2v17.6c0 .7.8 1.2 1.4.8l14-8.8a.95.95 0 0 0 0-1.6l-14-8.8c-.6-.4-1.4.1-1.4.8z" fill="currentColor" stroke="none"/></symbol>
-</svg>
-<a class="skip" href="#main">Skip to content</a>
+<body data-page="terms">
 <div class="progress" aria-hidden="true"></div>
 <div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div></div>
-
-<header class="top">
-  <div class="wrap bar">
-    <a class="brand" href="./"><span class="logo"><img src="img/icon-fg.png" alt=""></span>Crescendo</a>
-    <nav class="links" aria-label="Main">
-      <a href="./">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html" aria-current="page">Terms</a>
-      <a href="delete-account.html">Delete account</a>
-    </nav>
-    <button class="lang" type="button">SK</button>
-    <a class="btn small" href="https://play.google.com/store/apps/details?id=com.daklok.crescendo"><svg class="i"><use href="#i-play"/></svg>Get the app</a>
-    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="i"><use href="#i-menu"/></svg></button>
-  </div>
-</header>
+<div data-include="header"></div>
 
 <main id="main">
   <div class="wrap doc-head intro">
-    <span class="chip soft">Crescendo</span>
+    <nav class="doc-tabs" aria-label="Legal documents">
+      <a href="privacy.html" data-sk="Ochrana súkromia">Privacy Policy</a>
+      <a href="terms.html" aria-current="page" data-sk="Podmienky">Terms of Service</a>
+      <a href="delete-account.html" data-sk="Zmazanie účtu">Delete account</a>
+    </nav>
     <h1>Terms of Service</h1>
-    <p class="meta">Effective November 17, 2026</p>
+    <p class="meta"><span data-sk="Platné od">Effective</span> November 17, 2026</p>
+    <p class="lang-note" data-sk="Tento dokument je k dispozícii len v angličtine. Zhrnutie: noty a poznámky sú tvoje, buď k ostatným slušný a Pro zrušíš kedykoľvek v Google Play."></p>
     <div class="summary">
       <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>Your music and notes stay yours</div>
       <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span>Be kind – clear community rules</div>
@@ -96,12 +80,7 @@
   </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© <span class="year">2026</span> Samuel Káčer · Crescendo</span>
-    <nav><a href="./">Home</a><a href="privacy.html">Privacy Policy</a><a href="delete-account.html">Delete account</a><a href="mailto:support.crescendo.com@gmail.com">Contact</a></nav>
-  </div>
-</footer>
+<div data-include="footer"></div>
 <script src="site.js"></script>
 </body>
 </html>
