@@ -5,157 +5,223 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crescendo · sheet music, practice and friends</title>
 <meta name="description" content="Crescendo is a sheet music reader and practice tracker for Android. Read and annotate your scores, explore almost 2,000 free pieces, build practice streaks and share music with friends.">
-<meta name="theme-color" content="#F4F1E8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#13120F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FCFBF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12110E" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Crescendo · sheet music, practice and friends">
 <meta property="og:description" content="Read and annotate sheet music, explore almost 2,000 free scores, track your practice and share music with friends.">
 <meta property="og:image" content="https://daklok.github.io/Crescendo/img/og.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="logo.png">
+<link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body data-page="home">
-<div class="bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+<div class="bg" aria-hidden="true"></div>
 <div data-include="header"></div>
 
 <main id="main">
+  <!-- ───── hlavička ───── -->
   <section class="hero">
-    <div class="wrap">
-      <div class="intro">
-        <a class="announce when-beta" href="beta.html"><span class="tag">BETA</span><span class="dot" aria-hidden="true"></span><span data-sk="Hľadáme 12 testerov – pridaj sa">We need 12 testers – join in</span><span class="go" aria-hidden="true"><svg class="i"><use href="#i-right"/></svg></span></a><br class="when-beta">
-        <span class="chip"><span class="n">♪</span><span data-sk="Pre Android mobily a tablety">For Android phones &amp; tablets</span></span>
-        <h1 data-sk="Noty, cvičenie a&nbsp;<em>priatelia</em>.">Sheet music, practice &amp;&nbsp;<em>friends</em>.</h1>
-        <p class="lead" data-sk="Crescendo je pokojný a moderný domov pre tvoje noty. Čítaj a píš do partitúr, objavuj takmer 2&nbsp;000 skladieb zadarmo, buduj sériu cvičenia a zdieľaj hudbu s priateľmi.">Crescendo is a calm, modern home for your sheet music. Read and annotate your scores, explore almost 2,000 free pieces, build a practice streak and share music with friends.</p>
-        <div class="cta">
-          <a class="btn" data-cta href="beta.html"><span class="when-beta"><svg class="i"><use href="#i-flask"/></svg></span><span class="when-live"><svg class="i"><use href="#i-play"/></svg></span><span class="when-beta" data-sk="Pripojiť sa k bete">Join the beta</span><span class="when-live" data-sk="Stiahnuť na Google Play">Get it on Google Play</span></a>
-          <a class="btn tonal" href="#features" data-sk="Čo všetko vie">See what it does</a>
+    <div class="wrap intro">
+      <a class="announce when-beta" href="beta.html"><span class="tag">BETA</span><span class="dot" aria-hidden="true"></span><span data-sk="Hľadáme 12 testerov – pridaj sa">We need 12 testers – join in</span><span class="go" aria-hidden="true"><svg class="i"><use href="#i-right"/></svg></span></a>
+      <div class="headline">
+        <div class="tiles" aria-hidden="true">
+          <span class="tile-i t1"><span><svg class="i"><use href="#i-piano"/></svg></span></span>
+          <span class="tile-i t2"><span><svg class="i"><use href="#i-pen"/></svg></span></span>
+          <span class="tile-i t3"><span><svg class="i"><use href="#i-note"/></svg></span></span>
+          <span class="tile-i t4"><span><svg class="i"><use href="#i-flame"/></svg></span></span>
         </div>
-        <p class="note" data-sk="Zadarmo · Bez reklám · Bez sledovania">Free to use · No ads · No tracking</p>
+        <h1><span data-sk="Hraj">Play</span> <span class="hl"><span data-sk="viac">more</span><svg viewBox="0 0 200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M6 13 L196 3"/><path d="M6 13 L196 23"/></svg></span>.<br><em data-sk="Tráp sa menej.">Worry less.</em></h1>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="device tablet"><div class="scr"><img src="img/tablet-reader.webp" alt="" width="900" height="1316"></div></div>
-        <div class="device phone"><div class="scr"><img src="img/phone-home.webp" alt="" width="560" height="1188"></div></div>
-        <div class="sticker s1"><span class="ic"><svg class="i"><use href="#i-flame"/></svg></span><span data-sk="Séria 23 dní">23-day streak</span></div>
-        <div class="sticker s2"><span class="ic"><svg class="i"><use href="#i-note"/></svg></span><span data-sk="2 000 nôt zadarmo">2,000 free scores</span></div>
+      <p class="lead" data-sk="Crescendo spája tvoje noty, cvičenie a hudobných priateľov. Čítaj a píš do partitúr, objavuj takmer 2&nbsp;000 skladieb zadarmo a buduj sériu cvičenia – deň po dni.">Crescendo brings your sheet music, practice and music friends together. Read and annotate your scores, explore almost 2,000 free pieces and build a practice streak – day by day.</p>
+      <div class="cta">
+        <a class="btn store" data-cta href="beta.html"><svg class="i"><use href="#i-play"/></svg><span><small class="when-beta" data-sk="Pripoj sa k bete na">Join the beta on</small><small class="when-live" data-sk="Stiahni na">Get it on</small><b>Google Play</b></span></a>
+        <a class="btn tonal" href="#demo" data-sk="Pozri si ho v akcii">See it in action</a>
+      </div>
+      <p class="note"><svg class="i"><use href="#i-piano"/></svg><span data-sk="Pre Android mobily a tablety · Zadarmo · Bez reklám">For Android phones &amp; tablets · Free · No ads</span></p>
+    </div>
+  </section>
+
+  <!-- ───── ukážka v akcii ───── -->
+  <section class="demo" id="demo">
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Crescendo in action">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="p-lib" id="t-lib"><span data-sk="Knižnica">Library</span><span class="bar"></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-read" id="t-read"><span data-sk="Čítanie a poznámky">Read &amp; annotate</span><span class="bar"></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-listen" id="t-listen"><span data-sk="Počúvanie">Listen</span><span class="bar"></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-prac" id="t-prac"><span data-sk="Cvičenie">Practice</span><span class="bar"></span></button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="p-tog" id="t-tog"><span data-sk="Spolu">Together</span><span class="bar"></span></button>
+      </div>
+      <div class="stage">
+        <div class="panel on" role="tabpanel" id="p-lib" aria-labelledby="t-lib">
+          <div class="copy">
+            <span class="chip"><span class="n">1</span><span data-sk="Knižnica">Library</span></span>
+            <h3 data-sk="Všetky tvoje noty na jednom mieste">All your music, one tap away</h3>
+            <p data-sk="Importuj PDF, naskenuj papierové noty alebo si stiahni skladbu zadarmo. Crescendo si pamätá, kde si skončil.">Import PDFs, scan paper sheet music or download a free piece. Crescendo remembers exactly where you left off.</p>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Pokračuj presne tam, kde si prestal">Continue right where you stopped</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Obľúbené, priečinky a setlisty">Favorites, folders and setlists</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Rovnaká knižnica na mobile aj tablete">The same library on phone and tablet</span></li>
+            </ul>
+          </div>
+          <div class="devices">
+            <div class="dev tab-l"><video data-src="media/t-library.mp4" poster="media/t-library.webp" muted loop playsinline preload="none" aria-label="Library on a tablet"></video></div>
+            <div class="dev ph"><video data-src="media/p-home.mp4" poster="media/p-home.webp" muted loop playsinline preload="none" aria-label="Home screen on a phone"></video></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-read" aria-labelledby="t-read">
+          <div class="copy">
+            <span class="chip"><span class="n">2</span><span data-sk="Čítanie a poznámky">Read &amp; annotate</span></span>
+            <h3 data-sk="Pokojná čítačka, ktorá ti odpovie">A calm reader that writes back</h3>
+            <p data-sk="Noty na celú obrazovku a poznámky priamo do nich – prstoklady, zvýraznenie aj dynamika.">Full-screen sheet music with your marks right on it – fingerings, highlights and dynamics.</p>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Otáčaj strany ťuknutím, pedálom alebo hlavou">Turn pages by tap, pedal or a tilt of your head</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Pero, zvýrazňovač a pečiatky dynamiky">Pen, highlighter and dynamics stamps</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Skvelé so stylusom aj prstom">Great with a stylus or your finger</span></li>
+            </ul>
+          </div>
+          <div class="devices">
+            <div class="dev tab-l"><video data-src="media/t-annotate.mp4" poster="media/t-annotate.webp" muted loop playsinline preload="none" aria-label="Annotating sheet music on a tablet"></video></div>
+            <div class="dev ph"><video data-src="media/p-reader.mp4" poster="media/p-reader.webp" muted loop playsinline preload="none" aria-label="Turning pages on a phone"></video></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-listen" aria-labelledby="t-listen">
+          <div class="copy">
+            <span class="chip"><span class="n">3</span><span data-sk="Počúvanie">Listen</span></span>
+            <h3 data-sk="Počuj to. Uvidíš to. Zahráš to.">Hear it. See it. Play it.</h3>
+            <p data-sk="Mnohé skladby zadarmo majú nahrávku a vizualizér padajúcich nôt, ktorý ukáže, čo práve znie.">Many free pieces come with a recording and a falling-notes visualizer that shows exactly what you hear.</p>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Vizualizér klavíra (Pro)">Piano visualizer (Pro)</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Spomaľ si tempo na nácvik">Slow it down to learn</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Pripoj digitálne piano cez USB alebo Bluetooth">Connect a digital piano by USB or Bluetooth</span></li>
+            </ul>
+          </div>
+          <div class="devices">
+            <div class="dev tab-l"><video data-src="media/t-visualizer.mp4" poster="media/t-visualizer.webp" muted loop playsinline preload="none" aria-label="Piano visualizer on a tablet"></video></div>
+            <div class="dev ph"><video data-src="media/p-visualizer.mp4" poster="media/p-visualizer.webp" muted loop playsinline preload="none" aria-label="Piano visualizer on a phone"></video></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-prac" aria-labelledby="t-prac">
+          <div class="copy">
+            <span class="chip"><span class="n">4</span><span data-sk="Cvičenie">Practice</span></span>
+            <h3 data-sk="Cvičenie, ktoré vydrží">Practice that actually sticks</h3>
+            <p data-sk="Čas sa zaznamenáva sám, kým hráš. Stačí otvoriť noty a hrať.">Your time is tracked while you play. Just open your music and play.</p>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Denný cieľ a séria dní">A daily goal and a streak</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Týždenný prehľad a odznaky">Weekly recap and badges</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Widgety na plochu">Home screen widgets</span></li>
+            </ul>
+          </div>
+          <div class="devices">
+            <div class="dev tab-l"><video data-src="media/t-practice.mp4" poster="media/t-practice.webp" muted loop playsinline preload="none" aria-label="Practice statistics on a tablet"></video></div>
+            <div class="dev ph"><video data-src="media/p-practice.mp4" poster="media/p-practice.webp" muted loop playsinline preload="none" aria-label="Practice statistics on a phone"></video></div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="p-tog" aria-labelledby="t-tog">
+          <div class="copy">
+            <span class="chip"><span class="n">5</span><span data-sk="Spolu">Together</span></span>
+            <h3 data-sk="Cvičte spolu">Practice together</h3>
+            <p data-sk="Priatelia, týždenný rebríček a chat. Posielaj noty aj s prstokladmi učiteľovi, žiakom alebo kapele.">Friends, a weekly leaderboard and chat. Send scores with your fingerings to your teacher, students or band.</p>
+            <ul>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Povzbuď priateľa jedným ťuknutím">Cheer a friend with one tap</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Skupiny pre triedu, zbor či kapelu">Groups for a class, choir or band</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-sk="Nahlásenie a blokovanie, ak treba">Report and block when needed</span></li>
+            </ul>
+          </div>
+          <div class="devices">
+            <div class="dev tab-l"><video data-src="media/t-chat.mp4" poster="media/t-chat.webp" muted loop playsinline preload="none" aria-label="Chat with a friend on a tablet"></video></div>
+            <div class="dev ph"><video data-src="media/p-friends.mp4" poster="media/p-friends.webp" muted loop playsinline preload="none" aria-label="Friends leaderboard on a phone"></video></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ───── funkcie ───── -->
   <section id="features">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head center reveal">
         <span class="eyebrow" data-sk="Funkcie">Features</span>
-        <h2 data-sk="Všetko pre tvoje cvičenie na jednom mieste">Everything for your practice, in one place</h2>
-        <p class="lead" data-sk="Od prvého listu nôt až po koncert so setlistom – Crescendo ti nezavadzia a pomáha.">From the first page of music to the concert setlist, Crescendo stays out of your way and helps.</p>
+        <h2><span data-sk="Všetko, čo tvoje cvičenie">Everything your practice</span> <span class="hl"><span data-sk="potrebuje">needs</span><svg viewBox="0 0 200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M6 13 L196 3"/><path d="M6 13 L196 23"/></svg></span></h2>
+        <p class="lead" data-sk="Od prvého listu nôt až po koncert so setlistom.">From the first page of music to the concert setlist.</p>
       </div>
-      <div class="bento" data-stagger>
-        <article class="tile wide p">
-          <span class="ic"><svg class="i"><use href="#i-book"/></svg></span>
-          <h3 data-sk="Čítačka pre hudobníkov">A reader made for musicians</h3>
-          <p data-sk="Noty v PDF na celú obrazovku. Otáčaj strany ťuknutím, potiahnutím, pedálom digitálneho piana alebo pohybom hlavy – ruky ostanú na klávesoch.">Full-screen PDF sheet music. Turn pages with a tap, a swipe, your digital piano's pedal or a tilt of your head – your hands stay on the keys.</p>
+      <div class="cards" data-stagger>
+        <article class="card2 span2">
+          <div class="media p"><div class="peek"><video data-src="media/t-catalog.mp4" poster="media/t-catalog.webp" muted loop playsinline preload="none" aria-label="Free sheet music catalog"></video></div></div>
+          <div class="txt"><h3 data-sk="Takmer 2 000 nôt zadarmo">Almost 2,000 free scores</h3><p data-sk="Klasika z projektu Mutopia – podľa nástroja, obdobia a obťažnosti, stiahnuteľná jedným ťuknutím.">Classical music from the Mutopia Project – by instrument, period and difficulty, one tap to download.</p></div>
         </article>
-        <article class="tile wide">
-          <span class="ic"><svg class="i"><use href="#i-pen"/></svg></span>
-          <h3 data-sk="Poznámky priamo do nôt">Annotations right on the music</h3>
-          <p data-sk="Prstoklady perom alebo prstom, zvýrazňovač, tvary a pečiatky dynamiky. Pero a guma sú zadarmo, všetky nástroje s Pro.">Fingerings with a stylus or your finger, highlighter, shapes and dynamics stamps. Pen and eraser are free, every tool comes with Pro.</p>
+        <article class="card2">
+          <div class="media t"><div class="peek narrow"><video data-src="media/t-editor.mp4" poster="media/t-editor.webp" muted loop playsinline preload="none" aria-label="Writing music"></video></div></div>
+          <div class="txt"><h3><span data-sk="Píš vlastnú hudbu">Write your own music</span> <span class="beta">BETA</span></h3><p data-sk="Rukou, ťukaním alebo na klávesoch.">By hand, by tapping or on the keys.</p></div>
         </article>
-        <article class="tile t">
-          <span class="ic"><svg class="i"><use href="#i-note"/></svg></span>
-          <h3 data-sk="Takmer 2 000 nôt zadarmo">Almost 2,000 free scores</h3>
-          <p data-sk="Bach, Beethoven, Chopin a ďalší z projektu Mutopia, mnohé aj s nahrávkou.">Bach, Beethoven, Chopin and more from the Mutopia Project, many with a recording.</p>
+        <article class="card2">
+          <div class="media t"><div class="metro" aria-hidden="true"><div class="body"><div class="face"></div></div><div class="arm"></div><div class="beat"><span></span><span></span><span></span><span></span></div></div></div>
+          <div class="txt"><h3 data-sk="Metronóm a ladička">Metronome &amp; tuner</h3><p data-sk="Priamo pri notách – nemusíš prepínať aplikácie.">Right next to your music – no app switching.</p></div>
         </article>
-        <article class="tile">
-          <span class="ic"><svg class="i"><use href="#i-piano"/></svg></span>
-          <span class="beta pro">PRO</span>
-          <h3 data-sk="Vizualizér klavíra">Piano visualizer</h3>
-          <p data-sk="Padajúce noty na klaviatúre – počuj to, uvidíš to, zahráš to.">Falling notes on a keyboard – hear it, see it, play it.</p>
+        <article class="card2">
+          <div class="media p"><div class="streak" aria-hidden="true"><span class="flame"><svg class="i"><use href="#i-flame"/></svg></span><div class="ring"><svg viewBox="0 0 170 170"><circle class="track" cx="85" cy="85" r="70"/><circle class="prog" cx="85" cy="85" r="70"/></svg><div class="num"><b>23</b><span data-sk="dní v rade">days in a row</span></div></div><div class="days"><i>M</i><i>T</i><i>W</i><i>T</i><i>F</i><i>S</i><i>S</i></div></div></div>
+          <div class="txt"><h3 data-sk="Séria cvičenia">Practice streaks</h3><p data-sk="Denný cieľ, séria a odznaky ťa udržia v rytme.">A daily goal, streaks and badges keep you in rhythm.</p></div>
         </article>
-        <article class="tile">
-          <span class="ic"><svg class="i"><use href="#i-ear"/></svg></span>
-          <span class="beta pro">BETA · PRO</span>
-          <h3 data-sk="Otáčanie podľa zvuku">Turn by sound</h3>
-          <p data-sk="Crescendo počúva, ako hráš, a stranu otočí za teba.">Crescendo listens as you play and turns the page for you.</p>
+        <article class="card2">
+          <div class="media g"><div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="page"><svg class="i"><use href="#i-ear"/></svg><span data-sk="Otáčam stranu…">Turning page…</span></span></div></div>
+          <div class="txt"><h3><span data-sk="Otáčanie podľa zvuku">Turn by sound</span> <span class="beta">BETA · PRO</span></h3><p data-sk="Crescendo počúva, ako hráš, a otočí stranu za teba.">Crescendo listens as you play and turns the page for you.</p></div>
         </article>
-        <article class="tile">
-          <span class="ic"><svg class="i"><use href="#i-sparkle"/></svg></span>
-          <span class="beta pro">BETA</span>
-          <h3 data-sk="Píš vlastnú hudbu">Write your own music</h3>
-          <p data-sk="Píš noty rukou, ťukaním alebo na klávesoch – aj z pripojeného digitálneho piana.">Handwrite notes, tap them in or play them – even from a connected digital piano.</p>
+        <article class="card2 span2">
+          <div class="media g"><div class="both"><div class="peek"><img src="img/tablet-home.webp" alt="" loading="lazy" width="900" height="1316"></div><div class="peek phone"><img src="img/phone-home.webp" alt="" loading="lazy" width="560" height="1188"></div></div></div>
+          <div class="txt"><h3 data-sk="Na mobile aj tablete">On your phone and tablet</h3><p data-sk="Knižnica, poznámky a denník sa synchronizujú samy. S Pro aj noty a nahrávky.">Your library, annotations and practice log sync on their own. With Pro, your sheet music and recordings too.</p></div>
         </article>
-        <article class="tile">
-          <span class="ic"><svg class="i"><use href="#i-list"/></svg></span>
-          <span class="beta pro">PRO</span>
-          <h3 data-sk="Setlisty a pódium">Setlists &amp; stage mode</h3>
-          <p data-sk="Skladby na hodinu, skúšku či koncert v správnom poradí, zdieľané s kapelou.">Pieces for a lesson, rehearsal or concert in the right order, shared with your band.</p>
-        </article>
-        <article class="tile">
-          <span class="ic"><svg class="i"><use href="#i-tune"/></svg></span>
-          <h3 data-sk="Metronóm a ladička">Metronome &amp; tuner</h3>
-          <p data-sk="Zabudované, aby si nemusel prepínať aplikácie. Nahraj sa a vypočuj si pokrok.">Built in, so you never switch apps. Record yourself and hear your progress.</p>
-        </article>
-        <article class="tile wide t">
-          <span class="ic"><svg class="i"><use href="#i-flame"/></svg></span>
-          <h3 data-sk="Cvičenie, ktoré vydrží">Practice that actually sticks</h3>
-          <p data-sk="Čas sa zaznamenáva sám, kým hráš. Denné ciele, série, odznaky a týždenný prehľad ťa udržia v rytme.">Time is tracked while you play. Daily goals, streaks, badges and a weekly recap keep you in rhythm.</p>
-        </article>
-        <article class="tile wide p">
-          <span class="ic"><svg class="i"><use href="#i-people"/></svg></span>
-          <h3 data-sk="Cvičte spolu">Practice together</h3>
-          <p data-sk="Priatelia, týždenný rebríček a chat. Posielaj noty s prstokladmi učiteľovi, žiakom či kapele.">Friends, a weekly leaderboard and chat. Send scores with your fingerings to your teacher, students or band.</p>
+        <article class="card2">
+          <div class="media p"><div class="peek phone" style="left:50%"><video data-src="media/p-chat.mp4" poster="media/p-chat.webp" muted loop playsinline preload="none" aria-label="Chat"></video></div></div>
+          <div class="txt"><h3 data-sk="Zdieľaj noty v chate">Share music in a chat</h3><p data-sk="Aj s prstokladmi a poznámkami.">With your fingerings and notes.</p></div>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="screens">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow" data-sk="Ukážky">Screens</span>
-        <h2 data-sk="Navrhnuté tak, aby sa dobre cvičilo">Designed to be practised with</h2>
-      </div>
-      <div class="gallery reveal" tabindex="0" aria-label="Screenshots">
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-home.webp" alt="Crescendo home screen" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Domov">Home</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-annotations.webp" alt="Annotations in the reader" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Poznámky">Annotations</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-catalog.webp" alt="Free sheet music catalog" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Noty zadarmo">Free scores</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-visualizer.webp" alt="Piano visualizer" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Vizualizér">Visualizer</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-editor.webp" alt="Music editor" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Editor nôt">Music editor</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-practice.webp" alt="Practice statistics" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Cvičenie">Practice</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-leaderboard.webp" alt="Friends leaderboard" loading="lazy" width="560" height="1188"></div></div><figcaption data-sk="Rebríček">Leaderboard</figcaption></figure>
-        <figure class="shot"><div class="device"><div class="scr"><img src="img/phone-chat.webp" alt="Chat with a friend" loading="lazy" width="560" height="1188"></div></div><figcaption>Chat</figcaption></figure>
-      </div>
-      <div class="gallery-nav">
-        <button class="round" type="button" data-gal="prev" aria-label="Previous"><svg class="i"><use href="#i-left"/></svg></button>
-        <button class="round" type="button" data-gal="next" aria-label="Next"><svg class="i"><use href="#i-right"/></svg></button>
-      </div>
+  <!-- ───── skladatelia ───── -->
+  <section class="composers" aria-label="Composers in the free catalog">
+    <div class="wrap sec-head center reveal">
+      <span class="eyebrow" data-sk="Katalóg zadarmo">Free catalog</span>
+      <h2 data-sk="Od Bacha po Joplina">From Bach to Joplin</h2>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="row"><span>Johann Sebastian Bach</span><span>Ludwig van Beethoven</span><span>Frédéric Chopin</span><span>Wolfgang Amadeus Mozart</span><span>Erik Satie</span><span>Robert Schumann</span><span>Franz Schubert</span><span>Georg Friedrich Händel</span><span>Edvard Grieg</span><span>Antonio Vivaldi</span></div>
+      <div class="row"><span>Johann Sebastian Bach</span><span>Ludwig van Beethoven</span><span>Frédéric Chopin</span><span>Wolfgang Amadeus Mozart</span><span>Erik Satie</span><span>Robert Schumann</span><span>Franz Schubert</span><span>Georg Friedrich Händel</span><span>Edvard Grieg</span><span>Antonio Vivaldi</span></div>
+    </div>
+    <div class="marquee rev" aria-hidden="true">
+      <div class="row"><span>Scott Joplin</span><span>Felix Mendelssohn</span><span>Joseph Haydn</span><span>Sergei Rachmaninoff</span><span>Gabriel Fauré</span><span>Carl Czerny</span><span>Friedrich Burgmüller</span><span>Fernando Sor</span><span>Mauro Giuliani</span><span>Claudio Monteverdi</span></div>
+      <div class="row"><span>Scott Joplin</span><span>Felix Mendelssohn</span><span>Joseph Haydn</span><span>Sergei Rachmaninoff</span><span>Gabriel Fauré</span><span>Carl Czerny</span><span>Friedrich Burgmüller</span><span>Fernando Sor</span><span>Mauro Giuliani</span><span>Claudio Monteverdi</span></div>
     </div>
   </section>
 
+  <!-- ───── súkromie ───── -->
   <section id="privacy">
     <div class="wrap">
-      <div class="sec-head reveal">
+      <div class="sec-head center reveal">
         <span class="eyebrow" data-sk="Súkromie">Privacy</span>
-        <h2 data-sk="Tvoje noty patria tebe">Your music stays yours</h2>
-        <p class="lead" data-sk="Žiadne reklamy, žiadne sledovanie. Presne a zrozumiteľne popisujeme, čo sa s údajmi deje.">No ads, no tracking. We explain exactly what happens with your data, in plain words.</p>
+        <h2 data-sk="Tvoje noty patria tebe">Your music stays <em>yours</em></h2>
+        <p class="lead" data-sk="Žiadne reklamy, žiadne sledovanie. Zrozumiteľne popisujeme, čo sa s údajmi deje.">No ads, no tracking. We explain what happens with your data, in plain words.</p>
       </div>
       <div class="promise" data-stagger>
         <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Bez reklám a analytiky">No ads or analytics</b><span data-sk="V aplikácii nie je žiadny reklamný ani sledovací nástroj.">There are no ad or tracking SDKs in the app.</span></div>
         <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Údaje nepredávame">We never sell data</b><span data-sk="Údaje slúžia len na synchronizáciu a priateľov.">Data is used only for sync and friends.</span></div>
-        <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Kamera ostáva v zariadení">Camera stays on device</b><span data-sk="Otáčanie hlavou a kontroly bezpečnosti bežia priamo v zariadení.">Head-turning and safety checks run entirely on your device.</span></div>
-        <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Zmazanie kedykoľvek">Delete anytime</b><span data-sk="Účet a všetky údaje v cloude zmažeš jedným ťuknutím.">Delete your account and all cloud data in one tap.</span></div>
+        <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Kamera ostáva v zariadení">Camera stays on device</b><span data-sk="Otáčanie hlavou a kontroly bezpečnosti bežia priamo v zariadení.">Head turning and safety checks run on your device.</span></div>
+        <div><span class="check"><svg class="i"><use href="#i-check"/></svg></span><b data-sk="Zmazanie kedykoľvek">Delete anytime</b><span data-sk="Účet a všetky údaje v cloude zmažeš jedným ťuknutím.">Delete your account and cloud data in one tap.</span></div>
       </div>
-      <p class="reveal" style="margin-top:26px"><a href="privacy.html" data-sk="Prečítať Zásady ochrany súkromia">Read the Privacy Policy</a> · <a href="delete-account.html" data-sk="Ako zmazať účet">How to delete your account</a></p>
+      <p class="fine reveal"><a href="privacy.html" data-sk="Prečítať Zásady ochrany súkromia">Read the Privacy Policy</a> · <a href="delete-account.html" data-sk="Ako zmazať účet">How to delete your account</a></p>
     </div>
   </section>
 
+  <!-- ───── cenník ───── -->
   <section id="pro">
     <div class="wrap">
       <div class="teaser reveal">
         <div>
           <span class="eyebrow" data-sk="Cenník">Pricing</span>
-          <h2 data-sk="Zadarmo na používanie. Pro, keď chceš viac.">Free to use. Pro when you want more.</h2>
+          <h2 data-sk="Zadarmo na používanie. Pro, keď chceš viac.">Free to use. <em>Pro</em> when you want more.</h2>
           <p class="lead" data-sk="Všetko na čítanie a cvičenie je zadarmo a bez limitu skladieb. Pro pridáva vizualizér, otáčanie podľa zvuku, všetky nástroje na poznámky, setlisty, export do PDF a 1 GB cloudu.">Everything for reading and practising is free, with no limit on pieces. Pro adds the visualizer, turn by sound, every annotation tool, setlists, PDF export and 1 GB of cloud.</p>
           <div class="cta">
             <a class="btn" href="pricing.html" data-sk="Porovnať verzie">Compare plans</a>
@@ -171,14 +237,15 @@
     </div>
   </section>
 
+  <!-- ───── výzva ───── -->
   <section>
     <div class="wrap">
       <div class="cta-band reveal">
         <div class="logo-big"><img src="img/icon-fg.png" alt=""></div>
-        <h2 data-sk="Hraj viac. Tráp sa menej.">Play more. Worry less.</h2>
-        <p class="lead" data-sk="Vyskúšaj Crescendo ako jeden z prvých a pomôž mu vyjsť pre všetkých.">Try Crescendo among the first and help it launch for everyone.</p>
+        <h2><span data-sk="Hraj">Play</span> <span class="hl"><span data-sk="viac">more</span><svg viewBox="0 0 200 26" preserveAspectRatio="none" aria-hidden="true"><path d="M6 13 L196 3"/><path d="M6 13 L196 23"/></svg></span>. <em data-sk="Tráp sa menej.">Worry less.</em></h2>
+        <p class="lead" data-sk="Crescendo je zadarmo, bez reklám a pre mobily aj tablety s Androidom.">Crescendo is free, ad-free and made for Android phones and tablets.</p>
         <div class="cta">
-          <a class="btn" data-cta href="beta.html"><span class="when-beta" data-sk="Pripojiť sa k bete">Join the beta</span><span class="when-live" data-sk="Stiahnuť na Google Play">Get it on Google Play</span></a>
+          <a class="btn store" data-cta href="beta.html"><svg class="i"><use href="#i-play"/></svg><span><small class="when-beta" data-sk="Pripoj sa k bete na">Join the beta on</small><small class="when-live" data-sk="Stiahni na">Get it on</small><b>Google Play</b></span></a>
           <a class="btn outline" href="help.html" data-sk="Nápoveda a otázky">Help &amp; FAQ</a>
         </div>
       </div>
@@ -188,5 +255,52 @@
 
 <div data-include="footer"></div>
 <script src="site.js"></script>
+<script>
+(function () {
+  // ukážka v akcii: záložky sa striedajú samy, videá hrajú len v aktívnej záložke
+  var demo = document.getElementById('demo');
+  var tabs = Array.prototype.slice.call(demo.querySelectorAll('.tab'));
+  var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var visible = false;
+  var DUR = 9;
+  function show(i, focus) {
+    tabs.forEach(function (t, k) {
+      var on = k === i;
+      t.setAttribute('aria-selected', on);
+      t.tabIndex = on ? 0 : -1;
+      panels[k].classList.toggle('on', on);
+      panels[k].querySelectorAll('video').forEach(function (v) {
+        if (on && visible) { v.currentTime = 0; window.crescendoPlay(v); } else { v.pause(); }
+      });
+      // znovu spustí plnenie lišty
+      var bar = t.querySelector('.bar');
+      bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = '';
+    });
+    if (focus) tabs[i].focus();
+    // na mobile posunie len rad záložiek (nie celú stránku)
+    var row = tabs[i].parentNode;
+    if (row.scrollWidth > row.clientWidth) row.scrollTo({ left: tabs[i].offsetLeft - (row.clientWidth - tabs[i].offsetWidth) / 2, behavior: reduce ? 'auto' : 'smooth' });
+  }
+  function current() { return tabs.findIndex(function (t) { return t.getAttribute('aria-selected') === 'true'; }); }
+  demo.style.setProperty('--dur', DUR + 's');
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { show(i); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') show((i + 1) % tabs.length, true);
+      if (e.key === 'ArrowLeft') show((i - 1 + tabs.length) % tabs.length, true);
+    });
+    if (!reduce) t.querySelector('.bar').addEventListener('animationend', function () { show((current() + 1) % tabs.length); });
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      demo.classList.toggle('paused', !visible);
+      panels[current()].querySelectorAll('video').forEach(function (v) { if (visible) window.crescendoPlay(v); else v.pause(); });
+    }, { threshold: 0.25 }).observe(demo.querySelector('.stage'));
+  }
+  if (reduce) demo.classList.add('paused');
+})();
+</script>
 </body>
 </html>

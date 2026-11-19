@@ -78,8 +78,8 @@ var CRESCENDO = {
         link('help.html', 'Help', 'Nápoveda', 'help') +
         (C.beta ? link('beta.html', 'Beta', null, 'beta') : '') +
       '</nav>' +
-      '<button class="lang" type="button">SK</button>' + cta +
-      '<button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">' + icon('menu') + '</button>' +
+      '<div class="actions"><button class="lang" type="button">SK</button>' + cta +
+      '<button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">' + icon('menu') + '</button></div>' +
     '</div></header>';
 
   var footer =
@@ -196,7 +196,8 @@ var CRESCENDO = {
       c.style.setProperty('--d', (i * 0.07) + 's');
     });
   });
-  var reveals = document.querySelectorAll('.reveal');
+  // .reveal sa objaví; .hl (nakreslené zvýraznenie) a .card2 (animácie v kartách) sa len spustia
+  var reveals = document.querySelectorAll('.reveal, .hl, .card2');
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -208,14 +209,39 @@ var CRESCENDO = {
     reveals.forEach(function (r) { r.classList.add('in'); });
   }
 
-  /* ───── galéria obrazoviek ───── */
-  var gal = document.querySelector('.gallery');
-  document.querySelectorAll('[data-gal]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      if (!gal) return;
-      gal.scrollBy({ left: (b.getAttribute('data-gal') === 'next' ? 1 : -1) * 290, behavior: reduce ? 'auto' : 'smooth' });
-    });
-  });
+  /* ───── videá: načítajú sa až pri priblížení, hrajú len keď sú vidieť (a nie pri zníženom pohybe) ───── */
+  var videos = document.querySelectorAll('video[data-src]');
+  function load(v) { if (!v.src) { v.src = v.getAttribute('data-src'); v.load(); } }
+  window.crescendoPlay = function (v) {
+    if (reduce || !v) return;
+    load(v);
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  };
+  if (!reduce && 'IntersectionObserver' in window) {
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        // videá v neaktívnej záložke ukážky riadi ukážka sama
+        if (v.closest('.panel') && !v.closest('.panel.on')) return;
+        if (e.isIntersecting) window.crescendoPlay(v); else v.pause();
+      });
+    }, { rootMargin: '200px 0px' });
+    videos.forEach(function (v) { vio.observe(v); });
+  }
+
+  /* ───── plavajúce dlaždice sa jemne hýbu za myšou ───── */
+  var tiles = document.querySelectorAll('.tile-i');
+  if (tiles.length && !reduce && window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('pointermove', function (ev) {
+      var x = ev.clientX / window.innerWidth - .5, y = ev.clientY / window.innerHeight - .5;
+      tiles.forEach(function (t, i) {
+        var k = (i % 2 ? -1 : 1) * (14 + i * 4);
+        t.style.setProperty('--mx', (x * k) + 'px');
+        t.style.setProperty('--my', (y * k) + 'px');
+      });
+    }, { passive: true });
+  }
 
   /* ───── dokumenty: obsah, číslovanie kapitol, priebeh čítania ───── */
   var article = document.querySelector('.article');
