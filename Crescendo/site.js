@@ -72,15 +72,17 @@ var CRESCENDO = {
     '<a class="skip" href="#main" data-sk="Preskočiť na obsah">Skip to content</a>' +
     '<header class="top"><div class="wrap bar">' +
       '<a class="brand" href="' + root + './"><span class="logo"><img src="' + root + 'img/icon-fg.png" alt=""></span>Crescendo</a>' +
-      '<nav class="links" aria-label="Main">' +
-        link('index.html#features', 'Features', 'Funkcie', 'features') +
-        link('pricing.html', 'Pricing', 'Cenník', 'pricing') +
-        link('help.html', 'Help', 'Nápoveda', 'help') +
-        (C.beta ? link('beta.html', 'Beta', null, 'beta') : '') +
+      '<nav class="links" id="site-menu" aria-label="Main">' +
+        link('index.html#features', icon('sparkle') + '<span data-sk="Funkcie">Features</span>', null, 'features') +
+        link('pricing.html', icon('card') + '<span data-sk="Cenník">Pricing</span>', null, 'pricing') +
+        link('help.html', icon('help') + '<span data-sk="Nápoveda">Help</span>', null, 'help') +
+        (C.beta ? link('beta.html', icon('flask') + '<span>Beta</span>', null, 'beta') : '') +
+        '<span class="menu-legal">' + link('privacy.html', 'Privacy', 'Súkromie') + link('terms.html', 'Terms', 'Podmienky') + link('help.html#contact', 'Contact', 'Kontakt') + '</span>' +
+        '<span class="menu-cta">' + cta.replace('btn small', 'btn') + '</span>' +
       '</nav>' +
       '<div class="actions"><button class="lang" type="button">SK</button>' + cta +
-      '<button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">' + icon('menu') + '</button></div>' +
-    '</div></header>';
+      '<button class="menu-btn" type="button" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">' + icon('menu') + icon('close') + '</button></div>' +
+    '</div></header><div class="menu-scrim" aria-hidden="true"></div>';
 
   var footer =
     '<footer class="site-footer"><div class="wrap">' +
@@ -165,13 +167,16 @@ var CRESCENDO = {
 
   var menuBtn = document.querySelector('.menu-btn');
   if (menuBtn) {
-    menuBtn.addEventListener('click', function () {
-      var open = doc.classList.toggle('menu-open');
+    var setMenu = function (open) {
+      doc.classList.toggle('menu-open', open);
       menuBtn.setAttribute('aria-expanded', open);
-    });
-    document.querySelectorAll('.links a').forEach(function (a) {
-      a.addEventListener('click', function () { doc.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); });
-    });
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!doc.classList.contains('menu-open')); });
+    document.querySelectorAll('.links a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    var scrim = document.querySelector('.menu-scrim');
+    if (scrim) scrim.addEventListener('click', function () { setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 860) setMenu(false); });
   }
 
   /* ───── vlnka pri stlačení tlačidla ───── */
@@ -198,12 +203,17 @@ var CRESCENDO = {
   });
   // .reveal sa objaví; .hl (nakreslené zvýraznenie) a .card2 (animácie v kartách) sa len spustia
   var reveals = document.querySelectorAll('.reveal, .hl, .card2');
+  // na mobile sa obsah neodkrýva postupne (pri rýchlom posun bol vidieť až neskoro)
+  if (window.matchMedia('(max-width: 899px)').matches) {
+    document.querySelectorAll('.reveal').forEach(function (r) { r.classList.add('in'); });
+    reveals = document.querySelectorAll('.hl, .card2');
+  }
   if ('IntersectionObserver' in window && !reduce) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });
     reveals.forEach(function (r) { io.observe(r); });
   } else {
     reveals.forEach(function (r) { r.classList.add('in'); });
